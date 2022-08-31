@@ -74,7 +74,7 @@ sed -i 's:#!/usr/bin/env python:#!/usr/bin/env python2:g' storage/innobase/xtrab
 #
 %if 0%{?rhel} > 5
   cmake . -DBUILD_CONFIG=xtrabackup_release -DCMAKE_INSTALL_PREFIX=%{_prefix} \
-  -DWITH_SSL=system -DDOWNLOAD_BOOST=1 -DWITH_BOOST=libboost \
+  -DWITH_SSL=system -DDOWNLOAD_BOOST=0 -DWITH_BOOST=/usr/local/boost/ \
   -DINSTALL_MYSQLTESTDIR=%{_datadir}/percona-xtrabackup-test-%{xb_version_major}%{xb_version_minor} \
   -DINSTALL_MANDIR=%{_mandir} -DWITH_MAN_PAGES=1 \
   -DMYSQL_UNIX_ADDR="%{mysqldatadir}/mysql.sock" \
